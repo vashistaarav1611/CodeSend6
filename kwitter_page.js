@@ -27,8 +27,6 @@ function send() {
  document.getElementById("myAudio").play();
  time = document.getElementById("ct").innerHTML;
 }
-document.getElementById("msg").value = user_name+" had join codesend tab";
-send();
 function getData() {
  firebase.database().ref("/" + room_name).on('value', function (snapshot) {
   document.getElementById("output").innerHTML = "";
@@ -120,10 +118,6 @@ function picFunn() {
   });
  }, 5000);
 }
-window.addEventListener('beforeunload', function (e) {
-document.getElementById("msg").value = user_name + " have left codesend tab";
-send();
-});
 function mess(mossoge){
  document.getElementById("realtiv").innerHTML = "<strong>"+user_name+" said:</strong>"+mossoge;
  alert(mossoge);
